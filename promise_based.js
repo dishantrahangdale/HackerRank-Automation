@@ -2,9 +2,8 @@ const puppeteer = require("puppeteer")
 const code = require("./answers")
 
 const loginlink = "https://www.hackerrank.com/auth/login"
-const email = "dishant.rahangdale.167@gmail.com";
-const password = "Dishant@hack1";
-
+const email = "temp.singh.16@gmail.com";
+const password = "temp1234";
 let browserOpen = puppeteer.launch({
     headless:false,
     args:["--start-maximized"],

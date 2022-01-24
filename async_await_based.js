@@ -21,6 +21,7 @@ const password = "Dishant@hack1";
         await waitAndClick('.topic-card a[data-attr1="algorithms"]',newTab)
         await waitAndClick("input[value='warmup']",newTab)
         let allProblems = await newTab.$$(".ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled",{delay:30})
+        console.log(allProblems);
         console.log(allProblems.length);
         await questionsolver(newTab,allProblems[0],code.answers[0]);
     } 
@@ -55,4 +56,11 @@ async function questionsolver(page,question,answer){
         await page.keyboard.press('V',{delay:100})
         await page.keyboard.up('Control')
         await page.click('.hr-monaco__run-code',{delay:50})
+        
+        
+        // await waitForSelector(".testcase-tab-item.tab-item-color-success.testcase-item",page)
+        // await page.keyboard.down('Alt')
+        // await page.keyboard.press('ArrowLeft',{delay:100})
+        // await page.keyboard.up('Alt');
+        // await waitAndClick("",page)
 }
