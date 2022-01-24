@@ -12,7 +12,7 @@ let browserOpen = puppeteer.launch({
 })
 
 let page;
-
+let arr = [];
 browserOpen.then(function(browserObj){
     let browserOpenPromise = browserObj.newPage()
     return browserOpenPromise;
@@ -43,11 +43,11 @@ browserOpen.then(function(browserObj){
     let allquesPromise = page.$$(".ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled",{delay:30});
     return allquesPromise;
 }).then(function(questionARR){
-    console.log("length = ",questionARR.length);
+    arr = questionARR;
+    // console.log("length = ",questionARR.length);
     let questionwillbesolved = questionsolver(page,questionARR[0],code.answers[0])
     return questionwillbesolved;
 })
-
 
 function waitAndClick(selector,cpage){
     return new Promise(function(resolve,reject){
